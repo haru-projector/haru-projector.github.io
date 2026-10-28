@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Haru Projector 隐私政策 / Privacy Policy</title>
+<style>
+  :root { color-scheme: light dark; --bg: #f5f5f7; --fg: #1d1d1f; --muted: #6e6e73; --card: #fff; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #000; --fg: #f5f5f7; --muted: #98989d; --card: #1c1c1e; } }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.65 -apple-system, BlinkMacSystemFont, "PingFang SC", "Noto Sans SC", sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 32px 16px 64px; }
+  section { background: var(--card); border-radius: 16px; padding: 20px 22px; margin: 16px 0; }
+  h1 { font-size: 26px; margin: 0 0 4px; } h2 { font-size: 19px; margin: 0 0 8px; }
+  .muted { color: var(--muted); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Haru Projector 隐私政策</h1>
+  <p class="muted">最后更新：2026-10-28 · <a href="#en">English below</a></p>
+
+  <section>
+    <h2>Haru Projector 是什么</h2>
+    <p>Haru Projector 是一个开源的电视 / 投影仪桌面（Android 启动器）。用户可以在电视上扫码，用手机登录自己的 Google 账号，
+       让电视桌面左上角的日程卡片显示自己接下来的日程。</p>
+  </section>
+
+  <section>
+    <h2>我们读取哪些数据</h2>
+    <p>只申请一个权限：<code>https://www.googleapis.com/auth/calendar.readonly</code>（只读）。电视用它读取：</p>
+    <ul>
+      <li>日历列表（名称、颜色），供用户在电视上选择显示哪些日历；</li>
+      <li>所选日历中今天和接下来几天的日程：标题、开始和结束时间、是否全天。</li>
+    </ul>
+    <p>不读取、也不会修改：日程描述、参与者、附件、地点以外的其他信息（地点只在用户开启时显示），不创建、修改或删除任何日程，不访问邮件、联系人或任何其他 Google 数据。</p>
+  </section>
+
+  <section>
+    <h2>数据存在哪里、给谁</h2>
+    <ul>
+      <li>授权令牌（refresh token）和读取到的日程<strong>只保存在用户自己的电视上</strong>，用于在桌面上显示。</li>
+      <li>没有我们的服务器。日程不会上传到任何第三方，也不会用于广告、分析或训练模型。</li>
+      <li>登录时手机会经过一个静态网页（<a href="/oauth/">haru-projector.github.io/oauth</a>），它只在手机浏览器里把授权码交给同一 Wi-Fi 下的电视，不保存、不转发到别处。</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Google 用户数据政策</h2>
+    <p>Haru Projector 对从 Google API 获取的信息的使用和转移，遵守
+       <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API 服务用户数据政策</a>，包括其中的「有限使用」要求。</p>
+  </section>
+
+  <section>
+    <h2>如何删除</h2>
+    <p>在电视的日程卡片设置里选「移除账号」，电视会删除令牌和缓存的日程；也可以随时在
+       <a href="https://myaccount.google.com/permissions">Google 账号 → 第三方应用</a> 里撤销 Haru Projector 的访问权限。</p>
+  </section>
+
+  <section>
+    <h2>联系</h2>
+    <p>yjz.haruka@gmail.com</p>
+  </section>
+
+  <h1 id="en" style="margin-top:40px">Haru Projector Privacy Policy</h1>
+  <p class="muted">Last updated: 2026-10-28</p>
+  <section>
+    <p>Haru Projector is an open-source TV / projector home screen (Android launcher). A user scans a QR code on the TV and signs
+       in with their own Google account on their phone, so the TV's agenda card can show their upcoming events.</p>
+    <p><strong>Data accessed:</strong> one read-only scope, <code>calendar.readonly</code>: the list of calendars (name, colour) so
+       the user can choose which ones to show, and events of the selected calendars for today and the next few days
+       (title, start and end time, all-day flag). Haru Projector never creates, changes or deletes events and accesses no other
+       Google data.</p>
+    <p><strong>Storage and sharing:</strong> the refresh token and the fetched events are stored only on the user's own TV
+       and used only to display the agenda. There is no Haru Projector server; data is not sent to any third party and is not
+       used for advertising, analytics or model training. During sign-in the phone passes through a static page
+       (<a href="/oauth/">haru-projector.github.io/oauth</a>) that hands the authorization code to the TV on the same
+       Wi-Fi in the phone's browser and stores nothing.</p>
+    <p>Haru Projector's use and transfer of information received from Google APIs adheres to the
+       <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>,
+       including the Limited Use requirements.</p>
+    <p><strong>Deletion:</strong> choose "Remove account" in the TV's agenda card settings, or revoke access at any time at
+       <a href="https://myaccount.google.com/permissions">Google Account → Third-party apps</a>.</p>
+    <p><strong>Contact:</strong> yjz.haruka@gmail.com</p>
+  </section>
+</main>
+</body>
+</html>

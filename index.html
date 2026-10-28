@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Haru Projector</title>
+<style>
+  :root { color-scheme: light dark; --bg: #f5f5f7; --fg: #1d1d1f; --muted: #6e6e73; --card: #fff; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #000; --fg: #f5f5f7; --muted: #98989d; --card: #1c1c1e; } }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.65 -apple-system, BlinkMacSystemFont, "PingFang SC", "Noto Sans SC", sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 32px 16px 64px; }
+  section { background: var(--card); border-radius: 16px; padding: 20px 22px; margin: 16px 0; }
+  h1 { font-size: 30px; margin: 0 0 4px; } h2 { font-size: 19px; margin: 0 0 8px; }
+  .muted { color: var(--muted); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Haru Projector</h1>
+  <p class="muted">开源的电视 / 投影仪桌面 · An open-source home screen for TVs and projectors</p>
+
+  <section>
+    <h2>功能</h2>
+    <ul>
+      <li>大字号、遥控器友好的应用桌面，动态视频壁纸和 Steam 创意工坊壁纸；</li>
+      <li>左上角的时钟和天气卡片；</li>
+      <li><strong>日程卡片</strong>：在电视上扫码，用手机登录自己的 Google 账号，桌面就会显示今天和明天的日程，并在需要早起时提醒早点睡。</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Google 日历的使用</h2>
+    <p>只申请只读权限 <code>calendar.readonly</code>，读取用户选择的日历里近几天的日程标题和时间，只保存在用户自己的电视上、只用于在桌面显示。
+       详见 <a href="/privacy.html">隐私政策</a>。</p>
+  </section>
+
+  <section>
+    <h2>Features (English)</h2>
+    <p>A remote-friendly launcher with live video wallpapers, a clock and weather card, and an <strong>agenda card</strong>:
+       scan a QR code on the TV, sign in with your own Google account on your phone, and the home screen shows today's and
+       tomorrow's events (read-only <code>calendar.readonly</code>, stored only on your TV).
+       See the <a href="/privacy.html">privacy policy</a>.</p>
+  </section>
+
+  <p class="muted">联系 / Contact: yjz.haruka@gmail.com</p>
+</main>
+</body>
+</html>
