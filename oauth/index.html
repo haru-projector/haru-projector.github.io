@@ -42,10 +42,15 @@
   var dot = state.lastIndexOf('.');
   var host = dot > 0 ? state.slice(0, dot) : '';
   var m = /^(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3}):(\d{2,5})$/.exec(host);
-  var privateIp = m && (m[1] === '10' || (m[1] === '192' && m[2] === '168') ||
-                        (m[1] === '172' && +m[2] >= 16 && +m[2] <= 31) || (m[1] === '169' && m[2] === '254'));
+  // Plain decimal numbers only, and the address is put together again from them: a browser reads "172.016.1.1"
+  // as octal (172.14.1.1, on the internet), which a check on the text alone let through
+  var n = m ? [m[1], m[2], m[3], m[4], m[5]].map(Number) : [];
+  var plain = m && n.every(function (v, i) { return String(v) === m[i + 1]; }) &&
+              n[0] <= 255 && n[1] <= 255 && n[2] <= 255 && n[3] <= 255 && n[4] <= 65535;
+  var privateIp = plain && (n[0] === 10 || (n[0] === 192 && n[1] === 168) ||
+                            (n[0] === 172 && n[1] >= 16 && n[1] <= 31) || (n[0] === 169 && n[1] === 254));
   if (!code || !privateIp) return fail('链接不完整', '请回到投影上重新扫码。');
-  var target = 'http://' + host + '/oauth?code=' + encodeURIComponent(code) + '&state=' + encodeURIComponent(state);
+  var target = 'http://' + n.slice(0, 4).join('.') + ':' + n[4] + '/oauth?code=' + encodeURIComponent(code) + '&state=' + encodeURIComponent(state);
   history.replaceState(null, '', location.pathname);   // the code leaves the address bar and history
   location.replace(target);
   setTimeout(function () {
